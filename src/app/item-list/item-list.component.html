@@ -1,0 +1,25 @@
+<div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+    <span class="sr-only" style="opacity: 0;">.</span>
+  </div>
+
+<div class="row">
+  <div
+    class="card-wrapper col-md-3 col-s-6 col-xs-12"
+    *ngFor="let item of data"
+  >
+    <div class="card">
+      <img class="card-img-top" [src]="item.image" [alt]="item.title" />
+      <hr />
+      <div class="card-body">
+        <h5 class="card-text text-truncate">
+          {{ item.title }}
+        </h5>
+        <p class="card-text">{{ item.price }} $</p>
+        <p class="card-subtitle mb-3">
+          Rating: {{ item.rating.rate }}/5 ({{ item.rating.count }})
+        </p>
+        <a class="btn btn-primary">Buy now</a>
+      </div>
+    </div>
+  </div>
+</div>
